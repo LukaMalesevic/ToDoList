@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+html{
+    height: 100%;
+    font-size: 62.5%;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin: auto;
+    background: linear-gradient(-135deg, rgba(100,211,205,1) 35%, rgba(209,108,167,1) 100%);
+    font-family: 'Roboto', sans-serif;
+}
+
+.content{
+    width: 63%;
+    height: 80%;
+    display: flex;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.55);
+    border-radius: 40px;
+}
+
+.todo-list{
+    height: 100%;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    width: 21%;
+    background-color: rgba(245, 245, 245, 0.653);
+}
+
+.projects{
+    height: 100%;
+    width: 79%;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: rgba(245, 245, 245, 0.27);
+}
+
+.todo-list > h1{
+    text-align: center;
+    font-size: 3.2rem;
+    padding-top: 8px;
+    margin-block-end: 0px;
+}
+
+h2{
+    font-size: 2.1rem;
+    padding-left: 25px;
+    margin-block-start: 7px;
+}
+
+button{
+    border-radius: 20px;
+    font-size: 1.7rem;
+    font-weight: lighter;
+    width: 80%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 10px;
+    border: none;
+    background-color: transparent;
+}
+
+button:hover
+{
+    cursor: pointer;
+    background-color: #a7a7a7c7;
+}
+
+#completed{
+    margin-top: 15px;
+}
+
+#create-project, #submit, #submit-todo{
+    position: relative;
+    left: 10%;
+    font-weight: bolder;
+    display: flex;
+    justify-content: center;
+    background-color: #a7a7a7c7;
+}
+
+#create-project:hover, #submit:hover, #submit-todo:hover{
+    background-color: #918f8fc7;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+svg{
+    margin-right: 7px;
+    margin-top: -2px;
+}
+
+
+.projects-list{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#create-project-form, #create-todo-form{
+    position: absolute;
+    height: 300px;
+    width: 250px;
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.55);
+    visibility: hidden;
+    z-index: 1;
+}
+
+#create-project-form > legend, #create-todo-form > legend{
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+#imp-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#pr-name, #pr-desc, #todo-name, #calendar{
+    width: 80%;
+    border: 2px solid #a7a7a7c7;
+    outline: 2px solid transparent;
+    border-radius: 15px;
+    position: relative;
+    left: calc(10% - 8px);
+    padding-left: 10px;
+    font-size: 1.75rem;
+}
+
+#pr-name, #todo-name, #calendar{
+    height: 25px;
+}
+#pr-desc{
+    padding-top: 3px;
+    height: 50px;
+    resize: none;
+}
+#pr-name:focus, #pr-desc:focus, #todo-name:focus, #calendar:focus
+{
+    outline: 2px solid aquamarine;
+    border: 2px solid #918f8fc7;
+}
+
+#create-project-form > label, #create-todo-form > label{
+    font-size: 1.6rem;
+    width: 80%;
+    position: relative;
+    left: 10%;
+    margin-bottom: -20px;
+}
+
+#imp-container > label{
+    font-size: 1.6rem;
+    margin-right: 10px;
+}
+
+#x, #x-todo{
+    position: absolute;
+    top: 13px;
+    right: 3px;
+}
+
+#x:hover, #x-todo:hover
+{   
+    fill:red;
+    cursor: pointer;
+}
+
+#project-info-cont{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    /* background-color: aqua; */
+}
+
+#project-about-cont{
+    width: 87%;
+    height: 100%;
+    /* background-color: pink; */
+}
+
+#project-edit-cont{
+    width: 13%;
+    height: 75%;
+    /* background-color: beige; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    visibility: hidden;
+}
+
+.edit{
+    background-color: rgba(245, 245, 245, 0.653);
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    padding-left: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit:hover{
+    background-color: white;
+
+}
+
+#project-about-cont > h1{
+    font-size: 3.2rem;
+    padding-left: 20px;
+    padding-top: 8px;
+    margin-block-end: 0px;
+}
+
+h3{
+    font-size: 1.6rem;
+    padding-left: 20px;
+    font-weight: 400;
+}
+
+#project-addit-cont{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    /* background-color: aquamarine; */
+    
+}
+
+#project-addit-cont > button{
+    width: auto;
+    background-color: rgba(245, 245, 245, 0.653);
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#project-addit-cont > button:hover{
+    background-color: white;
+}
+
+#todo-container{
+    width: 100%;
+    height: 77%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.todo{
+    width: 95%;
+    height: 63px;
+    border-radius: 20px;
+    background-color: rgba(245, 245, 245, 0.653);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.leftContainer, .rightContainer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+}
+
+.rightContainer{
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+.rightContainer > button{
+    padding: 0 0 0 6px;
+    margin: 0;
+}
+
+.important-sticker{
+    position: absolute;
+    top: -20px;
+    left: -15px;
+    border-radius: 20px;
+    width: 100px;
+    height: 30px;
+    background-color: #E292A1;
+}
+
+.imp-txt{
+    position: relative;
+    left: 36px;
+    top: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="create-todo-form" action="#">
+        <svg id="x-todo" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+        <legend>Create New ToDo</legend>
+        <label for="">Name</label>
+        <input id="todo-name" type="text">
+        <label for="">Date</label>
+        <input type="date" id="calendar">
+        <div id="imp-container">
+            <label for="">Important?</label> <input id="imp-checkbox" type="checkbox">
+        </div>
+        <button id="submit-todo">Submit</button>
+    </form>
+    <form id="create-project-form" action="#">
+        <svg id="x" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
+        <legend>Create New Project</legend>
+        <label for="">Project Name</label>
+        <input id="pr-name" type="text">
+        <label for="">Project Description</label>
+        <textarea id="pr-desc" type="text"></textarea>
+        <button id="submit">Submit</button>
+    </form>
+    <div class="content">
+        <div class="todo-list">
+            <h1>Todo-List</h1>
+            <h2>Home</h2>
+            <div class="container">
+                <button id="general"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 16 16"> <path d="M0 2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 12.5V5a1 1 0 0 1-1-1V2zm2 3v7.5A1.5 1.5 0 0 0 3.5 14h9a1.5 1.5 0 0 0 1.5-1.5V5H2zm13-3H1v2h14V2zM5 7.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/> </svg>General</button>
+                <button id="today"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-archive" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M287.9 0c9.2 0 17.6 5.2 21.6 13.5l68.6 141.3 153.2 22.6c9 1.3 16.5 7.6 19.3 16.3s.5 18.1-5.9 24.5L433.6 328.4l26.2 155.6c1.5 9-2.2 18.1-9.7 23.5s-17.3 6-25.3 1.7l-137-73.2L151 509.1c-8.1 4.3-17.9 3.7-25.3-1.7s-11.2-14.5-9.7-23.5l26.2-155.6L31.1 218.2c-6.5-6.4-8.7-15.9-5.9-24.5s10.3-14.9 19.3-16.3l153.2-22.6L266.3 13.5C270.4 5.2 278.7 0 287.9 0zm0 79L235.4 187.2c-3.5 7.1-10.2 12.1-18.1 13.3L99 217.9 184.9 303c5.5 5.5 8.1 13.3 6.8 21L171.4 443.7l105.2-56.2c7.1-3.8 15.6-3.8 22.6 0l105.2 56.2L384.2 324.1c-1.3-7.7 1.2-15.5 6.8-21l85.9-85.1L358.6 200.5c-7.8-1.2-14.6-6.1-18.1-13.3L287.9 79z"/></svg>Today</button>
+                <button id="upcoming"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16"> <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/> <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/> </svg>Upcoming</button>
+                <button id="completed"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16"> <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/> <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/> </svg>Completed</button>
+                <!-- <button id="trash"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>Trash</button> -->
+            </div>
+            <h2>Projects</h2>
+            <div class="projects-list">
+
+            </div>
+            <button id="create-project"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/> </svg>Create Project</button>
+        </div>
+        <div class="projects">
+            <div id="project-info-cont">
+                <div id="project-about-cont">
+                    <h1 id="header">General</h1>
+                    <h3 id="header-info">A general list of todos</h3>
+                </div>
+                <div id="project-edit-cont">
+                    <button id="edit-btn" class="edit"><svg id='Edit_File_24' width='24' height='24' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'><rect width='24' height='24' stroke='none' fill='#000000' opacity='0'/><g transform="matrix(0.4 0 0 0.4 12 12)" >
+                        <path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" translate(-27.01, -25)" d="M 4 0 L 4 48 L 21 48 C 21.359375 48.003906 21.695313 47.816406 21.878906 47.503906 C 22.058594 47.191406 22.058594 46.808594 21.878906 46.496094 C 21.695313 46.183594 21.359375 45.996094 21 46 L 6 46 L 6 2 L 24 2 L 24 16 L 38 16 L 38 27 C 37.996094 27.359375 38.183594 27.695313 38.496094 27.878906 C 38.808594 28.058594 39.191406 28.058594 39.503906 27.878906 C 39.816406 27.695313 40.003906 27.359375 40 27 L 40 14.59375 L 39.71875 14.28125 L 25.71875 0.28125 L 25.40625 0 Z M 26 3.4375 L 36.5625 14 L 26 14 Z M 45.90625 24.90625 C 44.855469 24.90625 43.800781 25.292969 43 26.09375 L 42.3125 26.8125 L 42.34375 26.84375 L 26.90625 42.28125 C 26.777344 42.398438 26.679688 42.550781 26.625 42.71875 L 24.9375 48.71875 C 24.835938 49.066406 24.925781 49.441406 25.179688 49.703125 C 25.433594 49.960938 25.804688 50.0625 26.15625 49.96875 L 32.15625 48.375 C 32.324219 48.320313 32.476563 48.222656 32.59375 48.09375 L 48.40625 32.40625 C 48.53125 32.296875 48.628906 32.15625 48.6875 32 L 48.8125 31.90625 C 50.414063 30.304688 50.414063 27.695313 48.8125 26.09375 C 48.011719 25.292969 46.957031 24.90625 45.90625 24.90625 Z M 43.75 28.25 L 46.75 31.25 L 31.40625 46.5 L 28.46875 43.65625 L 28.5 43.53125 Z" stroke-linecap="round" />
+                        </g>
+                        </svg> </button>
+                    <button id="trash-btn" class="edit"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg></button>
+                </div>
+            </div>
+            <div id="project-addit-cont">
+                <button id="all-impo">All</button>
+                <button id="create-todo"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/> </svg> Create Todo</button>
+            </div>
+            <div id="todo-container">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
